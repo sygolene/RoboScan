@@ -1,5 +1,6 @@
 # RoboScan, fork sygolene
-# This is a fork of Roboscan. The scope of edits are customizing & tailoring to my own hardware (no led control, different motor driver,...). No changes on features nor algorithms.
+
+! This is a fork of Roboscan. The scope of edits are customizing & tailoring to my own hardware (no led control, different motor driver,...). No changes on features nor algorithms.
 # Original instruction follows. Local edits will be marked with a #sygolene edit comment tag.
 
 This is the source code for a Lego+Raspberry Pi-powered analog film roll scanner. Watch it in action:
