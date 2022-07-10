@@ -10,13 +10,10 @@ This is the source code for a Lego+Raspberry Pi-powered analog film roll scanner
 You'll need these items to build RoboScan:
 * A digital camera with a macro lens: must be compatible with [libgphoto2 with image capture and preview support](http://gphoto.org/proj/libgphoto2/support.php).
 * A Raspberry Pi: you may choose a Pi 4 if your camera supports USB 3, otherwise a Pi 2 or 3 is fine.
-* A 28BYJ-48 Stepper Motor with ULN2003A driver: easy to find and cheap (about $6)
-* 3D-print an adapter to integrate the stepper motor in the legos: use the stepper mount and axis adapter provided by this project (you'll need some bolts to attach the motor to the adapter): [https://create.arduino.cc/projecthub/fredrikstridsman/lego-stepperbot-df26b9](https://create.arduino.cc/projecthub/fredrikstridsman/lego-stepperbot-df26b9).
-* [Adafruit White LED Backlight Module](https://www.adafruit.com/product/1621).
-* A LED driver such as [Recom Power RCD-24-0.70/PL/B](https://www.digikey.com/en/products/detail/recom-power/RCD-24-0-70-PL-B/2612677) or [Sparkfun FemtoBuck LED Driver](https://www.sparkfun.com/products/13716).
-* A 50V, 47 μF capacitor
-* A high-power LED, such as [New Energy LST1-01G03-4095-01](https://www.digikey.com/en/products/detail/new-energy/LST1-01G03-4095-01/9816712): a 4000K white LED, with a CRI (Color Rendering Index) of 95.
-* Build the lego part: [https://www.mecabricks.com/en/models/r121kn4gvlB](https://www.mecabricks.com/en/models/r121kn4gvlB).
+* A Nema17 Stepper Motor with A4988 driver
+* The A4988 circuit includes a power inlet & a capacitor.
+* An external backlight, indepently operated from the circuit. This implies the original RoboScan code is modified to remove this part.
+* A film advance mechanism mechanically linked to the motor.
 
 ## Part 1: Wiring
 
@@ -36,23 +33,6 @@ Put a 50V, 47 μF capacitor between the LED+ and LED - pins of the driver.
 | IN4 | GPIO 19 |
 | POWER+ | 5V power (such as the one next to the Ground) |
 | POWER - | Ground (such as the one next to the 5V power) |
-
-### Recom Power RCD-24-0.70/PL/B Backlight LED driver wiring
-| Recom Power RCD-24-0.70/PL/B | Raspberry Pi |
-| ----------- | ----------- |
-| 1 - +Vin | 5V power (the one not already used by the stepper motor) |
-| 3 - PWM/ON/OFF | GPIO 18 |
-| 4 - GND | Ground (such as the one next to the GPIO 18) |
-
-### Alternative: Sparkfun FemtoBuck Backlight LED driver wiring
-**Untested** - make sure to solder the jumper that can be closed with a glob of solder to double the output current from 330mA to 660mA.
-| Sparkfun FemtoBuck LED Driver | Raspberry Pi |
-| ----------- | ----------- |
-| V-/PGND | Ground (any remaining) |
-| V+/VIN | 5V power (the one not already used by the stepper motor) |
-| D-/DGND | Ground (such as the one next to the GPIO 18) |
-| D+/CTRL | GPIO 18 |
-
 
 ## Part 2: Software installation
 
