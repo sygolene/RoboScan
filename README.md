@@ -88,8 +88,8 @@ cd RoboScan
 ### Start the application
 Now, you will ask docker to build and start the application. This might take a while (30-120 minutes).
 ```bash
-cd docker
-docker-compose up -d --build
+# sygolene edit sudo the following command
+cd docker-compose up -d --build
 ```
 
 It will start all components and restart them at reboot.
