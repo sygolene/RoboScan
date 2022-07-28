@@ -36,6 +36,7 @@ def parse_arguments() -> argparse.Namespace:
     parser.add_argument('--pin3', '-p3', default='13', type=int, help='BCM pin for IN3')
     parser.add_argument('--pin4', '-p4', default='19', type=int, help='BCM pin for IN4')
     parser.add_argument('--led', '-l', default='26', type=int, help='BCM pin for the LED')
+    #The following is either obsolete or to disable
     parser.add_argument('--backlight', '-bl', default='18', type=int, help='BCM pin for the backlight')
     parser.add_argument('--buttonstart', '-s', default='20', type=int, help='BCM pin for the start button')
     parser.add_argument('--buttonskip', '-k', default='21', type=int, help='BCM pin for the skip button')
