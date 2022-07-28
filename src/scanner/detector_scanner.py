@@ -68,9 +68,8 @@ def _get_model_files(use_edge_tpu: bool) -> Tuple[pathlib.Path, pathlib.Path]:
 class DetectorScanner(BacklightedScanner):
     __slots__ = ['_camera', '_stepper_device', '_object_detector', '_debug_count', ]
 
-    def __init__(self, camera: camera.Camera, backlight_pin: int, stepper_pin_1: int, stepper_pin_2: int, stepper_pin_3: int, stepper_pin_4: int, use_edge_tpu: bool=False) -> None:
-        super().__init__(backlight_pin)
-        
+    def __init__(self, camera: camera.Camera, stepper_pin_1: int, stepper_pin_2: int, stepper_pin_3: int, stepper_pin_4: int, use_edge_tpu: bool=False) -> None:
+
         self._debug_count = 0
 
         # Hardware devices

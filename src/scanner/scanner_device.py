@@ -3,7 +3,7 @@ from dataclasses import dataclass
 import threading
 from typing import Callable, Optional, Tuple
 
-from .hardware import led
+#from .hardware import led
 
 
 @dataclass
@@ -88,10 +88,11 @@ class Scanner(abc.ABC):
 
 
 class BacklightedScanner(Scanner):
-    def __init__(self, backlight_pin: int) -> None:
+    def __init__(self) -> None:
         super().__init__()
-        self.backlight_device = led.Led(
-            backlight_pin, active_high=False, initial_value=False)
+        #do nothing
+        #self.backlight_device = led.Led(
+        #    backlight_pin, active_high=False, initial_value=False)
 
     def start_session(self) -> bool:
         started = super().start_session()
